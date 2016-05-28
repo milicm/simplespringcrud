@@ -17,9 +17,13 @@ public class UserController {
 	private UserService userService;
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String register(String firstName, String lastName, String username, String password) {
-		userService.save(new User(username, password, firstName, lastName));
-		return "/WEB-INF/index.jsp";
+	public ModelAndView register(String firstName, String lastName, String username, String password) {
+		try {
+			userService.save(new User(username, password, firstName, lastName));
+			return new ModelAndView("/WEB-INF/index.jsp");
+		} catch (UserException ex) {
+			return new ModelAndView("/WEB-INF/error.jsp", "message", ex.getMessage());
+		}
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)

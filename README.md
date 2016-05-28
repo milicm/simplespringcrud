@@ -4,6 +4,7 @@ Simple Spring Boot CRUD aplication.
 ## Techology stack
 - Spring MVC
 - Spring Data JPA
+- Hibernate
 - JSP & Bootstrap
 - Powered by Spring Boot & Tomcat
 

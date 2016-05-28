@@ -8,8 +8,8 @@ Simple Spring Boot CRUD aplication.
 - Powered by Spring Boot & Tomcat
 
 ## Database
-- HSQLDB
+- HSQLDB (default)
 - MySQL
 
 ## Instructions
-Run `mvn spring-boot:run` command. Application is available from `http://localhost:8080'.
+Run `mvn spring-boot:run` command. Application is available from `http://localhost:8080`.

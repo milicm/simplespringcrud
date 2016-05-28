@@ -1,5 +1,5 @@
 # simplespringcrud
-Simple Spring Boot CRUD aplication.
+Simple Spring Boot CRUD aplication
 
 ## Techology stack
 - Spring MVC

@@ -1,21 +1,19 @@
 package com.mm.domain;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class User implements Entity {
+@Entity
+public class User implements DomainEntity {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 7683520930629200200L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
 	@Column
 	private String username;
 	@Column

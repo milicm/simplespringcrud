@@ -1,7 +1,7 @@
 # simplespringcrud
 Simple Spring Boot CRUD aplication
 
-## Techology Stack
+## Techology stack
 - Spring MVC
 - Spring Data JPA
 - Hibernate

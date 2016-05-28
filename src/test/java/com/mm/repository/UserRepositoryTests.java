@@ -77,4 +77,12 @@ public class UserRepositoryTests extends SimpleSpringCrudApplicationTests {
 		assertEquals(u, loggedUser);
 	}
 
+	@Test
+	public void findByUsername() {
+		User u = userRepository.save(new User("e", "e", "e", "e"));
+		User existingUser = userRepository.findByUsername(u.getUsername());
+		assertNotNull(existingUser);
+		assertEquals(u, existingUser);
+	}
+	
 }

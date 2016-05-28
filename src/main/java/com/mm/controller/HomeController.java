@@ -9,16 +9,16 @@ public class HomeController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index() {
-		return "/WEB-INF/index.jsp";
+		return "index";
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String indexRegister() {
-		return "/WEB-INF/register.jsp";
+		return "register";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String indexLogin() {
-		return "/WEB-INF/login.jsp";
+		return "login";
 	}
 }

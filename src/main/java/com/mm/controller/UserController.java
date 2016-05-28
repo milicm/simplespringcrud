@@ -20,9 +20,9 @@ public class UserController {
 	public ModelAndView register(String firstName, String lastName, String username, String password) {
 		try {
 			userService.save(new User(username, password, firstName, lastName));
-			return new ModelAndView("/WEB-INF/index.jsp");
+			return new ModelAndView("index");
 		} catch (UserException ex) {
-			return new ModelAndView("/WEB-INF/error.jsp", "message", ex.getMessage());
+			return new ModelAndView("err", "message", ex.getMessage());
 		}
 	}
 
@@ -30,9 +30,9 @@ public class UserController {
 	public ModelAndView login(String username, String password) {
 		try {
 			User user = userService.login(username, password);
-			return new ModelAndView("/WEB-INF/welcome.jsp", "user", user.getFirstName());
+			return new ModelAndView("welcome", "user", user.getFirstName());
 		} catch (UserException ex) {
-			return new ModelAndView("/WEB-INF/error.jsp", "message", ex.getMessage());
+			return new ModelAndView("err", "message", ex.getMessage());
 		}
 	}
 

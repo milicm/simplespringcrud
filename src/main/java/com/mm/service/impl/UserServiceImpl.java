@@ -27,7 +27,10 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User save(User user) {
+	public User save(User user) throws UserException {
+		if (userRepository.findByUsername(user.getUsername()) != null) {
+			throw new UserException("Username already exists!");
+		}
 		return userRepository.save(user);
 	}
 

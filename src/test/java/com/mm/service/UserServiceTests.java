@@ -31,8 +31,15 @@ public class UserServiceTests extends SimpleSpringCrudApplicationTests {
 	}
 
 	@Test(expected = UserException.class)
-	public void loginFailure() throws UserException {
+	public void loginFailure() {
 		User u = userService.login("mm", "mm");
 	}
 
+	@Test(expected = UserException.class)
+	public void registerFailure() {
+		User user = userService.save(new User("mm1", "1234", "M", "M"));
+		assertNotNull(user);
+		User u1 = userService.save(new User("mm1", "1234", "M", "M"));
+		assertNotNull(u1);
+	}
 }

@@ -19,16 +19,20 @@ public class UserRepositoryTests extends SimpleSpringCrudApplicationTests {
 	@Autowired
 	private UserRepository userRepository;
 
-	private User user;
-
 	@Before
 	public void setup() {
-		user = userRepository.save(new User("admin", "admin", "John", "Doe"));
+	}
+	
+	@Test
+	public void save() {
+		User user = userRepository.save(new User("admin", "admin", "John", "Doe"));
 		assertNotNull(user);
 	}
 
 	@Test
 	public void find() {
+		User user = userRepository.save(new User("x", "x", "John", "Doe"));
+		assertNotNull(user);
 		User u = userRepository.findOne(user.getId());
 		assertNotNull(u);
 		assertEquals(user, u);
@@ -36,7 +40,8 @@ public class UserRepositoryTests extends SimpleSpringCrudApplicationTests {
 
 	@Test
 	public void findAll() {
-		userRepository.save(new User("a", "a", "a", "a"));
+		User u = userRepository.save(new User("a", "a", "a", "a"));
+		assertNotNull(u);
 		List<User> users = userRepository.findAll();
 		assertNotNull(users);
 		assertFalse(users.isEmpty());
@@ -62,6 +67,14 @@ public class UserRepositoryTests extends SimpleSpringCrudApplicationTests {
 		User updatedUser = userRepository.save(u);
 		assertNotNull(updatedUser);
 		assertEquals(u, updatedUser);
+	}
+	
+	@Test
+	public void login() {
+		User u = userRepository.save(new User("d", "d", "d", "d"));
+		User loggedUser = userRepository.login(u.getUsername(), u.getPassword());
+		assertNotNull(loggedUser);
+		assertEquals(u, loggedUser);
 	}
 
 }

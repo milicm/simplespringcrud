@@ -11,3 +11,5 @@ Simple Spring Boot CRUD aplication.
 - HSQLDB
 - MySQL
 
+## Instructions
+Run `mvn spring-boot:run` command. Application is available from `http://localhost:8080'.

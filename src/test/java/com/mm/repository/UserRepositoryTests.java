@@ -22,7 +22,7 @@ public class UserRepositoryTests extends SimpleSpringCrudApplicationTests {
 	@Before
 	public void setup() {
 	}
-	
+
 	@Test
 	public void save() {
 		User user = userRepository.save(new User("admin", "admin", "John", "Doe"));
@@ -68,7 +68,7 @@ public class UserRepositoryTests extends SimpleSpringCrudApplicationTests {
 		assertNotNull(updatedUser);
 		assertEquals(u, updatedUser);
 	}
-	
+
 	@Test
 	public void login() {
 		User u = userRepository.save(new User("d", "d", "d", "d"));

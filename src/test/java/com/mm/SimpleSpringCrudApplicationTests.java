@@ -1,5 +1,7 @@
 package com.mm;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -13,6 +15,11 @@ public class SimpleSpringCrudApplicationTests {
 
 	@Test
 	public void contextLoads() {
+	}
+	
+	@Test
+	public void dummyTest() {
+		assertEquals(1, 1);
 	}
 	
 }

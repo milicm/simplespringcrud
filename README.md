@@ -2,10 +2,10 @@
 Simple Spring Boot CRUD aplication
 
 ## Techology stack
-- Spring MVC
+- Jersey
 - Spring Data JPA
 - Hibernate
-- JSP & Bootstrap
+- Bootstrap
 - Powered by Spring Boot & Tomcat
 
 ## Database
@@ -13,4 +13,4 @@ Simple Spring Boot CRUD aplication
 - MySQL
 
 ## Instructions
-Run `mvn spring-boot:run` command. Application is available from `http://localhost:8080`.
+Run `mvn spring-boot:run` command. Application is available from `http://localhost:8080/index.html`.

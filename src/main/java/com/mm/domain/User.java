@@ -22,16 +22,19 @@ public class User implements DomainEntity {
 	private String firstName;
 	@Column
 	private String lastName;
+	@Column
+	private int enabled;
 
 	public User() {
 	}
 
-	public User(String username, String password, String firstName, String lastName) {
+	public User(String username, String password, String firstName, String lastName, int enabled) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.enabled = enabled;
 	}
 
 	public Long getId() {
@@ -72,6 +75,14 @@ public class User implements DomainEntity {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	
+	public int getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
 	}
 
 	@Override

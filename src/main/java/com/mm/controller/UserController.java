@@ -19,7 +19,7 @@ public class UserController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ModelAndView register(String firstName, String lastName, String username, String password) {
 		try {
-			userService.save(new User(username, password, firstName, lastName));
+			userService.save(new User(username, password, firstName, lastName, 1));
 			return new ModelAndView("index");
 		} catch (UserException ex) {
 			return new ModelAndView("err", "message", ex.getMessage());

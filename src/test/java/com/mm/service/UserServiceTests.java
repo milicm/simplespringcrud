@@ -23,7 +23,7 @@ public class UserServiceTests extends SimpleSpringCrudApplicationTests {
 
 	@Test
 	public void login() {
-		User user = userService.save(new User("mm", "1234", "M", "M"));
+		User user = userService.save(new User("mm", "1234", "M", "M", 1));
 		assertNotNull(user);
 		User u = userService.login("mm", "1234");
 		assertNotNull(u);
@@ -37,9 +37,9 @@ public class UserServiceTests extends SimpleSpringCrudApplicationTests {
 
 	@Test(expected = UserException.class)
 	public void registerFailure() {
-		User user = userService.save(new User("mm1", "1234", "M", "M"));
+		User user = userService.save(new User("mm1", "1234", "M", "M", 1));
 		assertNotNull(user);
-		User u1 = userService.save(new User("mm1", "1234", "M", "M"));
+		User u1 = userService.save(new User("mm1", "1234", "M", "M", 1));
 		assertNotNull(u1);
 	}
 }

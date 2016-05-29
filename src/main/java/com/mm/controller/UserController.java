@@ -26,7 +26,7 @@ public class UserController {
 		}
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+/*	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView login(String username, String password) {
 		try {
 			User user = userService.login(username, password);
@@ -35,5 +35,5 @@ public class UserController {
 			return new ModelAndView("err", "message", ex.getMessage());
 		}
 	}
-
+*/
 }
